@@ -46,7 +46,7 @@ End-to-end Accounts Payable automation — extracts structured data from PDF inv
 | Volume capacity | 500+ invoices per run |
 | Audit coverage | 100% |
 
-📁 [`/01-invoice-processing`](./01-invoice-processing/) · 📄 [Solution Design Document](./01-invoice-processing/docs/)
+📁 [`/01-invoice-processing`](./01-invoice-processing/) · 📄 [Solution Design Document](https://github.com/Zinniie/rpa-automation-portfolio/blob/main/01-invoice-processing/docs/SDD-RPA-001-Invoice-Processing.pdf)
 
 ---
 
