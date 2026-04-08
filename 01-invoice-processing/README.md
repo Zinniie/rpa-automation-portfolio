@@ -40,6 +40,7 @@ Built on the **UiPath REFramework** with Orchestrator queue management for enter
 ---
 
 ## Architecture
+![Invoice Processing Flow](./docs/diagram-invoice-processing-flow.svg)
 
 ```
 ┌─────────────────────────────────────────────────────────┐
