@@ -176,7 +176,7 @@ rpa-automation-portfolio/
 **Blessing Nnabugwu** — RPA Developer  
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blessingnnabugwu-0077B5?style=flat-square&logo=linkedin)](https://linkedin.com/in/blessingnnabugwu)
-[![Portfolio](https://img.shields.io/badge/Portfolio-zinniie.github.io-1D9E75?style=flat-square)](https://zinniie.github.io)
+[![Portfolio](https://img.shields.io/badge/Portfolio-zinniie.github.io-1D9E75?style=flat-square)](https://zinniie.github.io/rpa-portfolio/)
 [![Email](https://img.shields.io/badge/Email-blessingezinnennabugwu%40gmail.com-1F3864?style=flat-square)](mailto:blessingezinnennabugwu@gmail.com)
 
 ---
