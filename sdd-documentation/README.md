@@ -19,7 +19,7 @@ Good documentation is what separates a bot that runs from a bot that can be main
 
 | Document | Bot | Platform | Status |
 |---|---|---|---|
-| [`SDD-RPA-001-Invoice-Processing.docx`](./SDD-RPA-001-Invoice-Processing.docx) | Invoice Processing Automation | UiPath | ✅ Complete |
+| [SDD-RPA-001-Invoice-Processing.pdf](https://github.com/Zinniie/rpa-automation-portfolio/blob/main/01-invoice-processing/docs/SDD-RPA-001-Invoice-Processing.pdf) | Invoice Processing Automation | UiPath | ✅ Complete |
 | `SDD-RPA-002-Bank-Reconciliation.docx` | Bank Reconciliation Bot | Blue Prism | 🔄 In Progress |
 | `SDD-RPA-003-REFramework-Processor.docx` | REFramework Transaction Processor | UiPath | 🔄 Planned |
 
