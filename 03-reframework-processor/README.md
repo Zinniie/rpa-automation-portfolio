@@ -14,7 +14,7 @@ A clean, fully documented implementation of the **UiPath Robotic Enterprise Fram
 
 This project demonstrates **best-practice UiPath development** including structured exception handling, Orchestrator queue management, config-driven design, and comprehensive logging. It is designed to serve both as a **production-ready bot** and as a **reference implementation** for teams adopting REFramework.
 
-> This is the architecture pattern used in real enterprise UiPath deployments — understanding it deeply is what separates junior developers from senior ones.
+![REFramework State Machine](./docs/diagram-reframework-state-machine.svg)
 
 ---
 
