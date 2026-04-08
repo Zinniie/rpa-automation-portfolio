@@ -161,8 +161,7 @@ All sensitive values are stored as **Orchestrator Assets** — never hardcoded.
 
 📄 Full **Solution Design Document (SDD)** available — covers AS-IS/TO-BE process design, architecture, data mapping, exception strategy, UAT test cases, and deployment plan.
 
-> See [`/docs/SDD-RPA-001-Invoice-Processing.docx`](./docs/)
-
+> 📄 [View Solution Design Document](https://github.com/Zinniie/rpa-automation-portfolio/blob/main/01-invoice-processing/docs/SDD-RPA-001-Invoice-Processing.pdf)
 ---
 
 ## Author
