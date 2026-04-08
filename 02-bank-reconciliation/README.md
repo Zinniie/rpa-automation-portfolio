@@ -41,6 +41,7 @@ Scheduled nightly via **Blue Prism Control Room** with automatic email notificat
 ---
 
 ## Architecture
+![Bank Reconciliation Flow](./docs/diagram-bank-reconciliation-flow.svg)
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
