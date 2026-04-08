@@ -173,5 +173,5 @@ The Excel reconciliation report generated on each run contains:
 ## Author
 
 **Blessing Nnabugwu** — RPA Developer  
-[LinkedIn](https://linkedin.com/in/blessingnnabugwu) · [Portfolio](https://zinniie.github.io) · [GitHub](https://github.com/zinniie)
+[LinkedIn](https://linkedin.com/in/blessingnnabugwu) · [Portfolio](https://zinniie.github.io/rpa-portfolio/) · [GitHub](https://github.com/zinniie)
  
