@@ -175,7 +175,7 @@ The bot computes file paths at runtime using a token-based naming convention:
 
 ## Documentation
 
-📄 [Solution Design Document — SDD-BN-002](./docs/)
+📄 [Solution Design Document — SDD-BN-002](https://github.com/Zinniie/rpa-automation-portfolio/blob/main/05-cross-currency-posting/docs/SDD-BN-002-Cross-Currency-Posting.pdf)
 
 Covers: process overview · AS-IS pain points · architecture · VBO stage details · database schema · exception handling · security · failover procedures · assumptions and dependencies
 
