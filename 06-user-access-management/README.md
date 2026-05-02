@@ -185,7 +185,7 @@ Key columns: `Email`, `Role`, `Branch`, `BranchCode`, `EmployeeID`, `UserID`, `R
 
 ## Documentation
 
-📄 [Solution Design Document — SDD-BN-003](./docs/)
+📄 [Solution Design Document — SDD-BN-003](https://github.com/Zinniie/rpa-automation-portfolio/blob/main/06-user-access-management/docs/SDD-BN-003-User-Access-Management.pdf)
 
 Covers: business context · AS-IS pain points · architecture · UAM process stages · portal VBO stage details · database schema · API parameter documentation · exception handling · scheduling · security · assumptions and dependencies
 
