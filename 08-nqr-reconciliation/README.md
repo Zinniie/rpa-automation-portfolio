@@ -188,7 +188,7 @@ The GL dataset spans the full non-business day period — the stored procedure d
 
 ## Documentation
 
-📄 [Solution Design Document — SDD-BN-005](./docs/)
+📄 [Solution Design Document — SDD-BN-005](https://github.com/Zinniie/rpa-automation-portfolio/blob/main/08-nqr-reconciliation/docs/SDD-BN-005-NQR-Reconciliation.pdf)
 
 Covers: business context · AS-IS pain points · database-centric architecture · stored procedure design · all VBO page stages · 9 output categories · GL staging logic · weekend aggregation · exception handling · failover procedures
 
