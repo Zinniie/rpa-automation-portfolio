@@ -1,0 +1,76 @@
+<svg width="100%" viewBox="0 0 720 860" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>NQR Reconciliation Automation flow diagram</title>
+<desc>Daily reconciliation flow from Business Day API through file loading, GL loading, validation, spNQRRecon execution, 9-category output, and stakeholder reporting</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+<style>
+text { font-family: Arial, sans-serif; fill: #222; }
+.th  { font-size: 13px; font-weight: 600; fill: #222; }
+.ts  { font-size: 11px; font-weight: 400; fill: #555; }
+.arr { stroke: #888; stroke-width: 1.2; fill: none; }
+.c-teal   rect { fill: #E1F5EE; stroke: #0F6E56; } .c-teal   text { fill: #085041; }
+.c-purple rect { fill: #EEEDFE; stroke: #534AB7; } .c-purple text { fill: #3C3489; }
+.c-coral  rect { fill: #FAECE7; stroke: #993C1D; } .c-coral  text { fill: #712B13; }
+.c-amber  rect { fill: #FAEEDA; stroke: #854F0B; } .c-amber  text { fill: #633806; }
+.c-navy   rect { fill: #E3E8F4; stroke: #1F3864; } .c-navy   text { fill: #1F3864; }
+.c-gray   rect, .c-gray polygon { fill: #F1EFE8; stroke: #5F5E5A; } .c-gray text { fill: #2C2C2A; }
+</style>
+</defs>
+
+<!-- Trigger -->
+<g class="c-gray"><rect x="210" y="16" width="300" height="40" rx="20" stroke-width="0.5"/><text class="th" x="360" y="36" text-anchor="middle" dominant-baseline="central">Scheduler trigger - 08:10 AM</text></g>
+<line x1="360" y1="56" x2="360" y2="82" class="arr" marker-end="url(#arrow)"/>
+
+<!-- Business Day API -->
+<g class="c-teal"><rect x="210" y="82" width="300" height="50" rx="8" stroke-width="0.5"/><text class="th" x="360" y="101" text-anchor="middle" dominant-baseline="central">Call Business Day API</text><text class="ts" x="360" y="119" text-anchor="middle" dominant-baseline="central">Returns IsBusinessDay flag</text></g>
+<line x1="360" y1="132" x2="360" y2="158" class="arr" marker-end="url(#arrow)"/>
+
+<!-- Decision -->
+<g class="c-gray"><polygon points="360,158 450,194 360,230 270,194" stroke-width="0.5"/><text class="th" x="360" y="194" text-anchor="middle" dominant-baseline="central">Business day?</text></g>
+<line x1="270" y1="194" x2="110" y2="194" class="arr" marker-end="url(#arrow)" stroke="#D85A30"/>
+<text class="ts" x="182" y="185" text-anchor="middle">No</text>
+<g class="c-coral"><rect x="20" y="172" width="130" height="44" rx="8" stroke-width="0.5"/><text class="th" x="85" y="188" text-anchor="middle" dominant-baseline="central">Notify + terminate</text><text class="ts" x="85" y="206" text-anchor="middle" dominant-baseline="central">non-business day</text></g>
+<line x1="360" y1="230" x2="360" y2="256" class="arr" marker-end="url(#arrow)"/>
+<text class="ts" x="374" y="247" dominant-baseline="central">Yes</text>
+
+<!-- Truncate + Load files -->
+<g class="c-amber"><rect x="210" y="256" width="300" height="50" rx="8" stroke-width="0.5"/><text class="th" x="360" y="275" text-anchor="middle" dominant-baseline="central">Truncate staging + Load files</text><text class="ts" x="360" y="293" text-anchor="middle" dominant-baseline="central">5 files (standard) / 11 files (post-weekend)</text></g>
+<line x1="360" y1="306" x2="360" y2="332" class="arr" marker-end="url(#arrow)"/>
+
+<!-- Load GL -->
+<g class="c-amber"><rect x="210" y="332" width="300" height="50" rx="8" stroke-width="0.5"/><text class="th" x="360" y="351" text-anchor="middle" dominant-baseline="central">Load GL for transit account</text><text class="ts" x="360" y="369" text-anchor="middle" dominant-baseline="central">Truncate NQRRECONGL + reload</text></g>
+<line x1="360" y1="382" x2="360" y2="408" class="arr" marker-end="url(#arrow)"/>
+
+<!-- Validate GL -->
+<g class="c-gray"><polygon points="360,408 460,444 360,480 260,444" stroke-width="0.5"/><text class="th" x="360" y="444" text-anchor="middle" dominant-baseline="central">GL balanced?</text></g>
+<line x1="460" y1="444" x2="580" y2="444" class="arr" marker-end="url(#arrow)" stroke="#D85A30"/>
+<text class="ts" x="513" y="435" text-anchor="middle">No</text>
+<g class="c-coral"><rect x="564" y="422" width="140" height="44" rx="8" stroke-width="0.5"/><text class="th" x="634" y="438" text-anchor="middle" dominant-baseline="central">Exception email</text><text class="ts" x="634" y="456" text-anchor="middle" dominant-baseline="central">terminate session</text></g>
+<line x1="360" y1="480" x2="360" y2="506" class="arr" marker-end="url(#arrow)"/>
+<text class="ts" x="374" y="497" dominant-baseline="central">Yes</text>
+
+<!-- spNQRRecon box - highlighted -->
+<g class="c-navy"><rect x="210" y="506" width="300" height="70" rx="8" stroke-width="1.5"/><text class="th" x="360" y="529" text-anchor="middle" dominant-baseline="central">EXECUTE spNQRRecon</text><text class="ts" x="360" y="547" text-anchor="middle" dominant-baseline="central">Auto-reversal detection</text><text class="ts" x="360" y="563" text-anchor="middle" dominant-baseline="central">Match settlement vs GL + classify exceptions</text></g>
+<line x1="360" y1="576" x2="360" y2="602" class="arr" marker-end="url(#arrow)"/>
+
+<!-- Read 9 tables -->
+<g class="c-purple"><rect x="210" y="602" width="300" height="50" rx="8" stroke-width="0.5"/><text class="th" x="360" y="621" text-anchor="middle" dominant-baseline="central">Read 9 result tables</text><text class="ts" x="360" y="639" text-anchor="middle" dominant-baseline="central">Matched / Exceptions / Reversed / GL / Duplicates</text></g>
+<line x1="360" y1="652" x2="360" y2="678" class="arr" marker-end="url(#arrow)"/>
+
+<!-- Generate Report -->
+<g class="c-teal"><rect x="210" y="678" width="300" height="50" rx="8" stroke-width="0.5"/><text class="th" x="360" y="697" text-anchor="middle" dominant-baseline="central">Generate 9-sheet Excel workbook</text><text class="ts" x="360" y="715" text-anchor="middle" dominant-baseline="central">One worksheet per reconciliation category</text></g>
+<line x1="360" y1="728" x2="360" y2="754" class="arr" marker-end="url(#arrow)"/>
+
+<!-- Send email -->
+<g class="c-teal"><rect x="210" y="754" width="300" height="44" rx="8" stroke-width="0.5"/><text class="th" x="360" y="776" text-anchor="middle" dominant-baseline="central">Send reconciliation report email</text></g>
+
+<!-- Legend -->
+<rect x="20" y="788" width="11" height="11" rx="2" fill="#1D9E75"/><text class="ts" x="37" y="799">Processing</text>
+<rect x="120" y="788" width="11" height="11" rx="2" fill="#534AB7"/><text class="ts" x="137" y="799">Result queries</text>
+<rect x="250" y="788" width="11" height="11" rx="2" fill="#BA7517"/><text class="ts" x="267" y="799">Data loading</text>
+<rect x="360" y="788" width="11" height="11" rx="2" fill="#1F3864"/><text class="ts" x="377" y="799">SQL engine</text>
+<rect x="460" y="788" width="11" height="11" rx="2" fill="#D85A30"/><text class="ts" x="477" y="799">Exception path</text>
+
+</svg>
